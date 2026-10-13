@@ -11,7 +11,6 @@ void print_binary_8(unsigned char value)
 
 int main(void)
 {
-    // --- Частина 1. Однобайтовий аналіз (Базове завдання) ---
     int input;
     printf("Enter value (0-255): ");
 
@@ -28,12 +27,10 @@ int main(void)
     print_binary_8(byte_val);
     printf("\n");
 
-    // Виводимо символ лише якщо він є зручним для відображення (ASCII 32 - 126)
     if (byte_val >= 32 && byte_val <= 126) {
         printf("Character:    %c\n", byte_val);
     }
 
-    // --- Частина 2. Додаткове завдання (32-бітний інспектор) ---
     printf("\nValue: 0x12345678\n\n");
     uint32_t val32 = 0x12345678;
     unsigned char* p = (unsigned char*)&val32;
@@ -45,7 +42,6 @@ int main(void)
         printf("byte %d: 0x%02X\n", i, p[i]);
     }
 
-    // Експериментальне визначення порядку байтів
     printf("\nByte order: ");
     if (*p == 0x78) {
         printf("Little-endian\n");
